@@ -41,17 +41,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   setState(() {});
                 },
                 validator: (val) {
-                  if (val == null || val.length < 3) {
-                    return 'Логин должен содержать не менее 3 символов';
-                  } else if (val != "qwerty") {
-                    return "Неправильный логин";
-                  } else {
-                    return null;
+                  if (val != null) {
+                    val.trim();
+                    if (val.length < 3) {
+                      return 'Логин должен содержать не менее 3 символов';
+                    } else if (val != "qwerty") {
+                      return "Неправильный логин";
+                    }
                   }
+                  return null;
                 },
                 decoration: InputDecoration(
                   labelText: 'Логин',
-                  counterText: '${_loginController.text.length}/8',
+                  counterText: '${_loginController.text.trim().length}/8',
                   contentPadding: const EdgeInsets.all(12),
                 ),
               ),
@@ -63,17 +65,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   setState(() {});
                 },
                 validator: (val) {
-                  if (val == null || val.length < 8) {
-                    return 'Пароль должен содержать не менее 8 символов';
-                  } else if (val != "123456ab") {
-                    return "Неправильный пароль";
-                  } else {
-                    return null;
+                  if (val != null) {
+                    val.trim();
+                    if (val.length < 8) {
+                      return 'Пароль должен содержать не менее 8 символов';
+                    } else if (val != "123456ab") {
+                      return "Неправильный пароль";
+                    }
                   }
+                  return null;
                 },
                 decoration: InputDecoration(
                   labelText: 'Пароль',
-                  counterText: '${_passwordController.text.length}/16',
+                  counterText: '${_passwordController.text.trim().length}/16',
                   contentPadding: const EdgeInsets.all(12),
                 ),
               ),
