@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../generated/l10n.dart';
 import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -20,9 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Авторизация"),
-      ),
+      appBar: AppBar(title: Text(S.of(context).auth)),
       body: Center(
         child: Form(
           key: _key,
@@ -30,9 +29,9 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Spacer(),
-              const Text(
-                'Введите логин и пароль',
-                style: TextStyle(fontWeight: FontWeight.w600),
+              Text(
+                S.of(context).inputLoginAndPassword,
+                style: const TextStyle(fontWeight: FontWeight.w600),
               ),
               TextFormField(
                 controller: _loginController,
@@ -42,17 +41,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 validator: (val) {
                   if (val != null) {
-                    val.trim();
+                    val = val.trim();
                     if (val.length < 3) {
-                      return 'Логин должен содержать не менее 3 символов';
+                      return S.of(context).lengthErrorCheckLogin;
                     } else if (val != "qwerty") {
-                      return "Неправильный логин";
+                      return S.of(context).inputErrorCheckLogin;
                     }
                   }
                   return null;
                 },
                 decoration: InputDecoration(
-                  labelText: 'Логин',
+                  labelText: S.of(context).login,
                   counterText: '${_loginController.text.trim().length}/8',
                   contentPadding: const EdgeInsets.all(12),
                 ),
@@ -66,17 +65,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 validator: (val) {
                   if (val != null) {
-                    val.trim();
                     if (val.length < 8) {
-                      return 'Пароль должен содержать не менее 8 символов';
+                      return S.of(context).lengthErrorCheckPassword;
                     } else if (val != "123456ab") {
-                      return "Неправильный пароль";
+                      return S.of(context).inputErrorCheckPassword;
                     }
                   }
                   return null;
                 },
                 decoration: InputDecoration(
-                  labelText: 'Пароль',
+                  labelText: S.of(context).password,
                   counterText: '${_passwordController.text.trim().length}/16',
                   contentPadding: const EdgeInsets.all(12),
                 ),
@@ -102,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       showAlertDialog(context);
                     }
                   },
-                  child: const Text('Вход'),
+                  child: Text(S.of(context).signIn),
                 ),
               ),
               const SizedBox(height: 20),
@@ -120,12 +118,12 @@ showAlertDialog(BuildContext context) {
     builder: (BuildContext context) {
       return AlertDialog(
         title: Text(
-          "Попробуйте снова",
+          S.of(context).tryAgain,
           style: Theme.of(context).textTheme.headline6,
         ),
         actions: [
           ElevatedButton(
-            child: const Text("Закрыть"),
+            child: Text(S.of(context).close),
             onPressed: () {
               Navigator.of(context).pop();
             },

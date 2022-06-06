@@ -1,0 +1,18 @@
+{
+    "counterValue": "Counter value:",
+    "auth": "Authorization",
+    "inputLoginAndPassword": "Input login and password",
+    "login": "Login",
+    "password": "Password",
+    "inputErrorCheckLogin": "Wrong login",
+    "inputErrorCheckPassword": "Wrong password",
+    "lengthErrorCheckLogin": "Login must contain at least 3 characters",
+    "lengthErrorCheckPassword": "Password must contain at least 8 characters",
+    "mainScreen": "Main screen",
+    "tryAgain": "Try again",
+    "close": "Close",
+    "signIn": "Sign in",
+    "language": "Language",
+    "english": "English",
+    "russian": "Russian"
+}
