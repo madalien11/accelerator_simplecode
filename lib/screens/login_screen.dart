@@ -36,9 +36,6 @@ class _LoginScreenState extends State<LoginScreen> {
               TextFormField(
                 controller: _loginController,
                 maxLength: 8,
-                onChanged: (val) {
-                  setState(() {});
-                },
                 validator: (val) {
                   if (val != null) {
                     val = val.trim();
@@ -52,7 +49,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 decoration: InputDecoration(
                   labelText: S.of(context).login,
-                  counterText: '${_loginController.text.trim().length}/8',
                   contentPadding: const EdgeInsets.all(12),
                 ),
               ),
@@ -60,9 +56,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: _passwordController,
                 maxLength: 16,
                 obscureText: true,
-                onChanged: (val) {
-                  setState(() {});
-                },
                 validator: (val) {
                   if (val != null) {
                     if (val.length < 8) {
@@ -75,7 +68,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 decoration: InputDecoration(
                   labelText: S.of(context).password,
-                  counterText: '${_passwordController.text.trim().length}/16',
                   contentPadding: const EdgeInsets.all(12),
                 ),
               ),
