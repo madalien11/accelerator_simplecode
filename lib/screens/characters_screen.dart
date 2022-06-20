@@ -2,7 +2,6 @@ import 'package:accelerator_simplecode/constants/app_colors.dart';
 import 'package:accelerator_simplecode/constants/app_styles.dart';
 import 'package:accelerator_simplecode/model/character_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../generated/l10n.dart';
 import '../widgets/character_card/character_card.dart';
@@ -65,7 +64,6 @@ class _CharactersScreenState extends State<CharactersScreen> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     return Scaffold(
       body: SafeArea(
         child: Padding(
