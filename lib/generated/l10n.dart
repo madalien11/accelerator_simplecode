@@ -209,6 +209,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Search characters`
+  String get charactersSearch {
+    return Intl.message(
+      'Search characters',
+      name: 'charactersSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total number of characters`
+  String get numberOfCharacters {
+    return Intl.message(
+      'Total number of characters',
+      name: 'numberOfCharacters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Alive`
+  String get alive {
+    return Intl.message(
+      'Alive',
+      name: 'alive',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dead`
+  String get dead {
+    return Intl.message(
+      'Dead',
+      name: 'dead',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

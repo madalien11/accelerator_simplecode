@@ -22,10 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "alive": MessageLookupByLibrary.simpleMessage("Живой"),
         "auth": MessageLookupByLibrary.simpleMessage("Авторизация"),
+        "charactersSearch":
+            MessageLookupByLibrary.simpleMessage("Найти персонажа"),
         "close": MessageLookupByLibrary.simpleMessage("Закрыть"),
         "counterValue":
-            MessageLookupByLibrary.simpleMessage("Значение счетчика:"),
+            MessageLookupByLibrary.simpleMessage("Значение счетчика"),
+        "dead": MessageLookupByLibrary.simpleMessage("Мертвый"),
         "english": MessageLookupByLibrary.simpleMessage("Английский"),
         "inputErrorCheckLogin":
             MessageLookupByLibrary.simpleMessage("Неправильный логин"),
@@ -40,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Пароль должен содержать не менее 8 символов"),
         "login": MessageLookupByLibrary.simpleMessage("Логин"),
         "mainScreen": MessageLookupByLibrary.simpleMessage("Главный экран"),
+        "numberOfCharacters":
+            MessageLookupByLibrary.simpleMessage("Всего персонажей"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
         "russian": MessageLookupByLibrary.simpleMessage("Русский"),
         "signIn": MessageLookupByLibrary.simpleMessage("Вход"),

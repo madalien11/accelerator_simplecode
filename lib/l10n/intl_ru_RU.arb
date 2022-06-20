@@ -1,5 +1,5 @@
 {
-    "counterValue": "Значение счетчика:",
+    "counterValue": "Значение счетчика",
     "auth": "Авторизация",
     "inputLoginAndPassword": "Введите логин и пароль",
     "login": "Логин",
@@ -14,5 +14,9 @@
     "signIn": "Вход",
     "language": "Язык",
     "english": "Английский",
-    "russian": "Русский"
+    "russian": "Русский",
+    "charactersSearch": "Найти персонажа",
+    "numberOfCharacters": "Всего персонажей",
+    "alive": "Живой",
+    "dead": "Мертвый"
 }

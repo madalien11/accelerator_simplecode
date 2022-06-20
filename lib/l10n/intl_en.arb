@@ -14,5 +14,9 @@
     "signIn": "Sign in",
     "language": "Language",
     "english": "English",
-    "russian": "Russian"
+    "russian": "Russian",
+    "charactersSearch": "Search characters",
+    "numberOfCharacters": "Total number of characters",
+    "alive": "Alive",
+    "dead": "Dead"
 }

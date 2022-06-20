@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const Spacer(),
             Text(S.of(context).counterValue),
             Text(
-              '$_counter',
+              '$_counter:',
               style: Theme.of(context).textTheme.headline4,
             ),
             const Spacer(),

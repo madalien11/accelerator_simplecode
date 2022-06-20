@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../generated/l10n.dart';
-import 'home_screen.dart';
+import 'characters_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({
@@ -92,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
+                          builder: (context) => const CharactersScreen(),
                         ),
                       );
                     } else {
