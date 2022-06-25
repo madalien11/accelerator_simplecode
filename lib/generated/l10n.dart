@@ -120,6 +120,16 @@ class S {
     );
   }
 
+  /// `Wrong login or password is entered`
+  String get inputErrorCheckLoginPassword {
+    return Intl.message(
+      'Wrong login or password is entered',
+      name: 'inputErrorCheckLoginPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Login must contain at least 3 characters`
   String get lengthErrorCheckLogin {
     return Intl.message(
@@ -160,11 +170,31 @@ class S {
     );
   }
 
+  /// `Error`
+  String get error {
+    return Intl.message(
+      'Error',
+      name: 'error',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Close`
   String get close {
     return Intl.message(
       'Close',
       name: 'close',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
       desc: '',
       args: [],
     );
@@ -245,6 +275,46 @@ class S {
     return Intl.message(
       'Dead',
       name: 'dead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account yet`
+  String get dontHaveAnAccount {
+    return Intl.message(
+      'Don\'t have an account yet',
+      name: 'dontHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create`
+  String get create {
+    return Intl.message(
+      'Create',
+      name: 'create',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Characters`
+  String get characters {
+    return Intl.message(
+      'Characters',
+      name: 'characters',
       desc: '',
       args: [],
     );

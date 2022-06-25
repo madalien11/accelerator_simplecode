@@ -1,11 +1,12 @@
 import 'package:accelerator_simplecode/constants/app_colors.dart';
-import 'package:accelerator_simplecode/constants/app_styles.dart';
+import 'package:accelerator_simplecode/constants/app_text_styles.dart';
 import 'package:accelerator_simplecode/model/character_model.dart';
 import 'package:flutter/material.dart';
 
-import '../generated/l10n.dart';
-import '../widgets/character_card/character_card.dart';
-import '../widgets/search/search_bar.dart';
+import '../../generated/l10n.dart';
+import '../../widgets/character_card/character_card.dart';
+import '../../widgets/nav_bar/nav_bar.dart';
+import '../../widgets/search/search_bar.dart';
 
 class CharactersScreen extends StatefulWidget {
   const CharactersScreen({Key? key}) : super(key: key);
@@ -65,9 +66,11 @@ class _CharactersScreenState extends State<CharactersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const NavBar(current: 0),
+      backgroundColor: AppColors.background,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
           child: Column(
             children: [
               SearchBar(searchQueryContoller: searchQueryContoller),

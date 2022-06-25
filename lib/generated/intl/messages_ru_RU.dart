@@ -24,15 +24,22 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "alive": MessageLookupByLibrary.simpleMessage("Живой"),
         "auth": MessageLookupByLibrary.simpleMessage("Авторизация"),
+        "characters": MessageLookupByLibrary.simpleMessage("Персонажи"),
         "charactersSearch":
             MessageLookupByLibrary.simpleMessage("Найти персонажа"),
         "close": MessageLookupByLibrary.simpleMessage("Закрыть"),
         "counterValue":
             MessageLookupByLibrary.simpleMessage("Значение счетчика"),
+        "create": MessageLookupByLibrary.simpleMessage("Создать"),
         "dead": MessageLookupByLibrary.simpleMessage("Мертвый"),
+        "dontHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("У вас еще нет аккаунта"),
         "english": MessageLookupByLibrary.simpleMessage("Английский"),
+        "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "inputErrorCheckLogin":
             MessageLookupByLibrary.simpleMessage("Неправильный логин"),
+        "inputErrorCheckLoginPassword": MessageLookupByLibrary.simpleMessage(
+            "Введен неверный логин или пароль"),
         "inputErrorCheckPassword":
             MessageLookupByLibrary.simpleMessage("Неправильный пароль"),
         "inputLoginAndPassword":
@@ -46,9 +53,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "mainScreen": MessageLookupByLibrary.simpleMessage("Главный экран"),
         "numberOfCharacters":
             MessageLookupByLibrary.simpleMessage("Всего персонажей"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ок"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
         "russian": MessageLookupByLibrary.simpleMessage("Русский"),
-        "signIn": MessageLookupByLibrary.simpleMessage("Вход"),
+        "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Попробовать снова")
       };
 }

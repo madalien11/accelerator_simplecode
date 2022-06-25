@@ -6,11 +6,14 @@
     "password": "Password",
     "inputErrorCheckLogin": "Wrong login",
     "inputErrorCheckPassword": "Wrong password",
+    "inputErrorCheckLoginPassword": "Wrong login or password is entered",
     "lengthErrorCheckLogin": "Login must contain at least 3 characters",
     "lengthErrorCheckPassword": "Password must contain at least 8 characters",
     "mainScreen": "Main screen",
     "tryAgain": "Try again",
+    "error": "Error",
     "close": "Close",
+    "ok": "Ok",
     "signIn": "Sign in",
     "language": "Language",
     "english": "English",
@@ -18,5 +21,9 @@
     "charactersSearch": "Search characters",
     "numberOfCharacters": "Total number of characters",
     "alive": "Alive",
-    "dead": "Dead"
+    "dead": "Dead",
+    "dontHaveAnAccount": "Don't have an account yet",
+	"create": "Create",
+	"settings": "Settings",
+	"characters": "Characters"
 }

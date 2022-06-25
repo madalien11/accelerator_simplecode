@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/app_styles.dart';
+import '../../constants/app_text_styles.dart';
 import '../../generated/l10n.dart';
 import '../../model/character_model.dart';
 

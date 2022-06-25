@@ -1,17 +1,16 @@
+import 'package:accelerator_simplecode/constants/app_colors.dart';
+import 'package:accelerator_simplecode/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'generated/l10n.dart';
-import 'screens/login_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
-      statusBarColor: Colors.grey[50],
+    const SystemUiOverlayStyle(
+      statusBarColor: AppColors.splashBackground,
       statusBarIconBrightness: Brightness.dark,
-      systemNavigationBarColor: Colors.white,
-      systemNavigationBarIconBrightness: Brightness.light,
     ),
   );
 
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Accelerator SimpleCode',
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        colorSchemeSeed: AppColors.primary,
       ),
       localizationsDelegates: const [
         S.delegate,
@@ -37,7 +36,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       locale: const Locale('ru', 'RU'),
-      home: const LoginScreen(),
+      home: const SplashScreen(),
     );
   }
 }

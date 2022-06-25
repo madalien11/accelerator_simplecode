@@ -24,14 +24,21 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "alive": MessageLookupByLibrary.simpleMessage("Alive"),
         "auth": MessageLookupByLibrary.simpleMessage("Authorization"),
+        "characters": MessageLookupByLibrary.simpleMessage("Characters"),
         "charactersSearch":
             MessageLookupByLibrary.simpleMessage("Search characters"),
         "close": MessageLookupByLibrary.simpleMessage("Close"),
         "counterValue": MessageLookupByLibrary.simpleMessage("Counter value:"),
+        "create": MessageLookupByLibrary.simpleMessage("Create"),
         "dead": MessageLookupByLibrary.simpleMessage("Dead"),
+        "dontHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account yet"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
+        "error": MessageLookupByLibrary.simpleMessage("Error"),
         "inputErrorCheckLogin":
             MessageLookupByLibrary.simpleMessage("Wrong login"),
+        "inputErrorCheckLoginPassword": MessageLookupByLibrary.simpleMessage(
+            "Wrong login or password is entered"),
         "inputErrorCheckPassword":
             MessageLookupByLibrary.simpleMessage("Wrong password"),
         "inputLoginAndPassword":
@@ -45,8 +52,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "mainScreen": MessageLookupByLibrary.simpleMessage("Main screen"),
         "numberOfCharacters":
             MessageLookupByLibrary.simpleMessage("Total number of characters"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "russian": MessageLookupByLibrary.simpleMessage("Russian"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Try again")
       };
