@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:accelerator_simplecode/constants/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,9 +14,13 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  var rng = Random();
+  late int rand;
+
   @override
   void initState() {
     super.initState();
+    rand = rng.nextInt(100);
     Future.delayed(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
@@ -56,12 +62,18 @@ class _SplashScreenState extends State<SplashScreen> {
                       AppAssets.images.logo,
                     ),
                   ),
-                  Expanded(
-                    child: Image.asset(AppAssets.images.splashMorty),
-                  ),
-                  Expanded(
-                    child: Image.asset(AppAssets.images.splashRick),
-                  ),
+                  rand % 2 == 0
+                      ? Expanded(
+                          child: Image.asset(AppAssets.images.splashMorty),
+                        )
+                      : Expanded(
+                          flex: 2,
+                          child: Image.asset(AppAssets.images.splashRickMorty),
+                        ),
+                  if (rand % 2 == 0)
+                    Expanded(
+                      child: Image.asset(AppAssets.images.splashRick),
+                    ),
                 ],
               ),
             ),
