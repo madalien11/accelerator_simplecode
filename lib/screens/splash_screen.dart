@@ -21,13 +21,17 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     rand = rng.nextInt(100);
-    Future.delayed(const Duration(seconds: 2), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const LoginScreen(),
-        ),
-      );
-    });
+    Future.delayed(
+      const Duration(seconds: 2),
+    ).whenComplete(
+      () {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => const LoginScreen(),
+          ),
+        );
+      },
+    );
   }
 
   @override

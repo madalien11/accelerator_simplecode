@@ -1,5 +1,6 @@
 import 'package:accelerator_simplecode/constants/app_colors.dart';
 import 'package:accelerator_simplecode/constants/app_text_styles.dart';
+import 'package:accelerator_simplecode/repo/repo_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -53,6 +54,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                 ],
                 onChanged: (val) async {
+                  if (val == null) return;
                   if (val == 'ru_RU') {
                     await S.load(const Locale('ru', 'RU'));
                     setState(() {});
@@ -60,6 +62,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     await S.load(const Locale('en'));
                     setState(() {});
                   }
+                  RepoSettings().saveLocale(val.toString());
                 },
               ),
             ],
