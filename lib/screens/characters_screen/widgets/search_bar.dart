@@ -5,11 +5,17 @@ import '../../../constants/app_text_styles.dart';
 import '../../../generated/l10n.dart';
 
 class SearchBar extends StatelessWidget {
-  const SearchBar({Key? key}) : super(key: key);
+  const SearchBar({
+    Key? key,
+    this.onChanged,
+  }) : super(key: key);
+
+  final ValueChanged<String>? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       decoration: InputDecoration(
         hintText: S.of(context).charactersSearch,
         hintStyle: AppTextStyles.s16w400,

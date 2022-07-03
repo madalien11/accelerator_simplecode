@@ -4,11 +4,7 @@ import '../../../model/character_model.dart';
 
 class CharactersListVModel with ChangeNotifier {
   bool isListView = true;
-
-  void switchView() {
-    isListView = !isListView;
-    notifyListeners();
-  }
+  late List<CharacterModel> filteredList = charactersList;
 
   final charactersList = [
     ..._characters,
@@ -16,6 +12,18 @@ class CharactersListVModel with ChangeNotifier {
     ..._characters,
     ..._characters,
   ];
+
+  void filter(String query) {
+    filteredList = charactersList
+        .where((e) => (e.name.toLowerCase().contains(query)))
+        .toList();
+    notifyListeners();
+  }
+
+  void switchView() {
+    isListView = !isListView;
+    notifyListeners();
+  }
 }
 
 List<CharacterModel> _characters = [

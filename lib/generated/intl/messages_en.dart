@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "alive": MessageLookupByLibrary.simpleMessage("Alive"),
         "auth": MessageLookupByLibrary.simpleMessage("Authorization"),
         "characters": MessageLookupByLibrary.simpleMessage("Characters"),
+        "charactersListIsEmpty":
+            MessageLookupByLibrary.simpleMessage("Characters were not found"),
         "charactersSearch":
             MessageLookupByLibrary.simpleMessage("Search characters"),
         "close": MessageLookupByLibrary.simpleMessage("Close"),
@@ -57,6 +59,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "russian": MessageLookupByLibrary.simpleMessage("Russian"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
+        "somethingWentWrong":
+            MessageLookupByLibrary.simpleMessage("Something went wrong :-("),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Try again")
       };
 }

@@ -21,13 +21,18 @@ class CharactersScreen extends StatelessWidget {
         create: (context) => CharactersListVModel(),
         builder: (context, _) {
           final charactersTotal =
-              context.watch<CharactersListVModel>().charactersList.length;
+              context.watch<CharactersListVModel>().filteredList.length;
           return SafeArea(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
               child: Column(
                 children: [
-                  const SearchBar(),
+                  SearchBar(
+                    onChanged: (val) {
+                      Provider.of<CharactersListVModel>(context, listen: false)
+                          .filter(val.toLowerCase());
+                    },
+                  ),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -55,22 +60,38 @@ class CharactersScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   Consumer<CharactersListVModel>(
-                    builder: ((context, value, child) => Expanded(
-                          child: GridView.count(
-                            crossAxisCount: value.isListView ? 1 : 2,
-                            mainAxisSpacing: 24,
-                            crossAxisSpacing: 16,
-                            childAspectRatio: value.isListView ? 4 : 1,
-                            children: value.charactersList
-                                .map(
-                                  (e) => CharacterCard(
-                                    isHorizontal: value.isListView,
-                                    character: e,
-                                  ),
-                                )
-                                .toList(),
+                    builder: ((context, value, child) {
+                      if (value.filteredList.isEmpty) {
+                        return Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  S.of(context).charactersListIsEmpty,
+                                ),
+                              ),
+                            ],
                           ),
-                        )),
+                        );
+                      }
+                      return Expanded(
+                        child: GridView.count(
+                          crossAxisCount: value.isListView ? 1 : 2,
+                          mainAxisSpacing: 24,
+                          crossAxisSpacing: 16,
+                          childAspectRatio: value.isListView ? 4 : 1,
+                          children: value.filteredList
+                              .map(
+                                (e) => CharacterCard(
+                                  isHorizontal: value.isListView,
+                                  character: e,
+                                ),
+                              )
+                              .toList(),
+                        ),
+                      );
+                    }),
                   ),
                 ],
               ),

@@ -25,5 +25,7 @@
     "dontHaveAnAccount": "У вас еще нет аккаунта",
 	"create": "Создать",
 	"settings": "Настройки",
-	"characters": "Персонажи"
+	"characters": "Персонажи",
+    "charactersListIsEmpty": "Персонажей не найдено",
+	"somethingWentWrong": "Что-то пошло не так :-("
 }

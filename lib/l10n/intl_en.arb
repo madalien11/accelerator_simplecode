@@ -25,5 +25,7 @@
     "dontHaveAnAccount": "Don't have an account yet",
 	"create": "Create",
 	"settings": "Settings",
-	"characters": "Characters"
+	"characters": "Characters",
+    "charactersListIsEmpty": "Characters were not found",
+	"somethingWentWrong": "Something went wrong :-("
 }
