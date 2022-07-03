@@ -3,6 +3,7 @@ import 'package:accelerator_simplecode/constants/app_text_styles.dart';
 import 'package:accelerator_simplecode/repo/repo_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
 import '../../widgets/nav_bar/nav_bar.dart';
@@ -62,7 +63,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     await S.load(const Locale('en'));
                     setState(() {});
                   }
-                  RepoSettings().saveLocale(val.toString());
+                  if (!mounted) return;
+                  final repoSettings =
+                      Provider.of<RepoSettings>(context, listen: false);
+                  repoSettings.saveLocale(val.toString());
                 },
               ),
             ],
