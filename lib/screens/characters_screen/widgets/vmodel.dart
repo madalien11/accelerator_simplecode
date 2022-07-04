@@ -1,21 +1,34 @@
+import 'package:accelerator_simplecode/repo/repo_characters.dart';
 import 'package:flutter/material.dart';
 
 import '../../../model/character_model.dart';
 
 class CharactersListVModel with ChangeNotifier {
-  bool isListView = true;
-  late List<CharacterModel> filteredList = charactersList;
+  CharactersListVModel({required this.repo}) {
+    _init();
+  }
 
-  final charactersList = [
-    ..._characters,
-    ..._characters,
-    ..._characters,
-    ..._characters,
-  ];
+  String? errorMessage;
+  List<CharacterModel> filteredList = <CharacterModel>[];
+  bool isListView = true;
+  var isLoading = true;
+  final RepoCharacters repo;
+
+  var _charactersList = <CharacterModel>[];
+
+  void _init() {
+    repo.readCharacters().then((result) {
+      errorMessage = result.errorMessage;
+      _charactersList = result.charactersList ?? <CharacterModel>[];
+      filteredList = _charactersList;
+      isLoading = false;
+      notifyListeners();
+    });
+  }
 
   void filter(String query) {
-    filteredList = charactersList
-        .where((e) => (e.name.toLowerCase().contains(query)))
+    filteredList = _charactersList
+        .where((e) => e.name?.toLowerCase().contains(query) ?? false)
         .toList();
     notifyListeners();
   }
@@ -25,41 +38,3 @@ class CharactersListVModel with ChangeNotifier {
     notifyListeners();
   }
 }
-
-List<CharacterModel> _characters = [
-  CharacterModel(
-    name: 'Рик Cанчез',
-    isAlive: true,
-    description: 'Человек, Мужской',
-  ),
-  CharacterModel(
-    name: 'Директор Агентства',
-    isAlive: true,
-    description: 'Человек, Мужской',
-  ),
-  CharacterModel(
-    name: 'Морти Смит',
-    isAlive: true,
-    description: 'Человек, Мужской',
-  ),
-  CharacterModel(
-    name: 'Саммер Смит',
-    isAlive: true,
-    description: 'Человек, Женский',
-  ),
-  CharacterModel(
-    name: 'Альберт Эйнштейн',
-    isAlive: false,
-    description: 'Человек, Мужской',
-  ),
-  CharacterModel(
-    name: 'Алан Райлс',
-    isAlive: false,
-    description: 'Человек, Мужской',
-  ),
-  CharacterModel(
-    name: 'Мак Миллер',
-    isAlive: false,
-    description: 'Человек, Мужской',
-  ),
-];

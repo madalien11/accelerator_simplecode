@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/app_text_styles.dart';
-import '../../generated/l10n.dart';
-import '../../model/character_model.dart';
+import '../../../../constants/app_text_styles.dart';
+import '../../../../model/character_model.dart';
 
 class CharacterCardText extends StatelessWidget {
   const CharacterCardText({
@@ -23,17 +22,17 @@ class CharacterCardText extends StatelessWidget {
           isHorizontal ? MainAxisAlignment.center : MainAxisAlignment.start,
       children: [
         Text(
-          character.isAlive
-              ? S.of(context).alive.toUpperCase()
-              : S.of(context).dead.toUpperCase(),
-          style: character.isAlive ? AppTextStyles.alive : AppTextStyles.dead,
+          character.status?.toUpperCase() ?? '',
+          style: character.status == 'Alive'
+              ? AppTextStyles.alive
+              : AppTextStyles.dead,
         ),
         Text(
-          character.name,
+          character.name!,
           style: AppTextStyles.s16w500,
         ),
         Text(
-          character.description,
+          '${character.species!} ${character.gender!}',
           style: AppTextStyles.s12w400,
         ),
       ],

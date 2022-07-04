@@ -1,3 +1,4 @@
+import 'package:accelerator_simplecode/repo/repo_characters.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,9 +19,9 @@ class InitWidget extends StatelessWidget {
         Provider(
           create: (context) => RepoSettings(),
         ),
-        // Provider(
-        //   create: (context) => RepoPersons(),
-        // ),
+        Provider(
+          create: (context) => RepoCharacters(),
+        ),
       ],
       child: child,
     );

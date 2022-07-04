@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../model/character_model.dart';
+import '../../../../model/character_model.dart';
 import 'character_card_text.dart';
-import 'no_avatar_widget.dart';
+import 'avatar_widget.dart';
 
 class CharacterCard extends StatelessWidget {
   const CharacterCard({
@@ -20,9 +20,7 @@ class CharacterCard extends StatelessWidget {
         ? Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Expanded(
-                child: NoAvatarWidget(),
-              ),
+              Expanded(child: AvatarWidget(url: character.image)),
               const SizedBox(width: 18),
               Expanded(
                 flex: 3,
@@ -35,9 +33,7 @@ class CharacterCard extends StatelessWidget {
         : Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Expanded(
-                child: NoAvatarWidget(),
-              ),
+              Expanded(child: AvatarWidget(url: character.image)),
               const SizedBox(height: 18),
               CharacterCardText(
                 character: character,
