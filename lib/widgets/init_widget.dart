@@ -1,4 +1,5 @@
 import 'package:accelerator_simplecode/bloc/characters_bloc.dart';
+import 'package:accelerator_simplecode/repo/api.dart';
 import 'package:accelerator_simplecode/repo/repo_characters.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +22,12 @@ class InitWidget extends StatelessWidget {
           create: (context) => RepoSettings(),
         ),
         RepositoryProvider(
-          create: (context) => RepoCharacters(),
+          create: (context) => Api(),
+        ),
+        RepositoryProvider(
+          create: (context) => RepoCharacters(
+            api: RepositoryProvider.of<Api>(context),
+          ),
         ),
       ],
       child: MultiBlocProvider(
