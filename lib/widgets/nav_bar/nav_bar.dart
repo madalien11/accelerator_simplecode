@@ -37,6 +37,7 @@ class NavBar extends StatelessWidget {
         ),
       ],
       onTap: (index) {
+        if (index == current) return;
         switch (index) {
           case 0:
             Navigator.of(context).pushAndRemoveUntil(

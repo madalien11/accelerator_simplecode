@@ -6,12 +6,12 @@ import 'package:accelerator_simplecode/model/character_model.dart';
 import 'package:http/http.dart' as http;
 
 class RepoCharacters {
-  Future<ResultRepoCharacters> readCharacters() async {
+  Future<ResultRepoCharacters> filterByName(String name) async {
     try {
-      final url = Uri.parse('$baseUrl/character');
+      final url = Uri.parse('$baseUrl/character/?name=$name');
       final result = await http.get(url);
       final data = jsonDecode(result.body);
-      final charactersListJson = data['results'] as List;
+      final List charactersListJson = data['results'] ?? [];
       final charactersList = charactersListJson
           .map(
             (e) => CharacterModel.fromJson(e),
