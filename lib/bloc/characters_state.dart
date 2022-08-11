@@ -1,18 +1,13 @@
-part of 'characters_bloc.dart';
+// part of 'characters_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import '../model/character_model.dart';
+part 'characters_state.freezed.dart';
 
-@immutable
-abstract class CharactersState {}
-
-class CharactersInitial extends CharactersState {}
-
-class CharactersLoading extends CharactersState {}
-
-class CharactersData extends CharactersState {
-  CharactersData({required this.data});
-  final List<CharacterModel> data;
-}
-
-class CharactersError extends CharactersState {
-  CharactersError({required this.error});
-  final String error;
+@freezed
+class CharactersState with _$CharactersState {
+  const factory CharactersState.initial() = CharactersInitial;
+  const factory CharactersState.loading() = CharactersLoading;
+  const factory CharactersState.data({required List<CharacterModel> data}) =
+      CharactersData;
+  const factory CharactersState.error(String error) = CharactersError;
 }

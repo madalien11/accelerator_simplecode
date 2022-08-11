@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:accelerator_simplecode/constants/app_colors.dart';
 import 'package:accelerator_simplecode/constants/app_text_styles.dart';
 
+import '../../bloc/characters_state.dart';
 import '../../generated/l10n.dart';
 import '../../widgets/nav_bar/nav_bar.dart';
 import 'widgets/character_card/character_card.dart';
@@ -63,58 +64,57 @@ class CharactersScreen extends StatelessWidget {
                 Expanded(
                   child: BlocBuilder<CharactersBloc, CharactersState>(
                     builder: ((context, state) {
-                      if (state is CharactersLoading) {
-                        return Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [CircularProgressIndicator()],
-                        );
-                      }
-
-                      if (state is CharactersError) {
-                        return Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Flexible(child: Text(state.error)),
-                          ],
-                        );
-                      }
-
-                      if (state is CharactersData) {
-                        if (state.data.isEmpty) {
+                      return state.when(
+                        initial: () => const SizedBox.shrink(),
+                        loading: () {
+                          return Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [CircularProgressIndicator()],
+                          );
+                        },
+                        data: (data) {
+                          if (data.isEmpty) {
+                            return Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Flexible(
+                                  child: Text(
+                                    S.of(context).charactersListIsEmpty,
+                                  ),
+                                ),
+                              ],
+                            );
+                          } else {
+                            return ValueListenableBuilder<bool>(
+                              valueListenable: isListView,
+                              builder: (context, isListViewMode, _) {
+                                return GridView.count(
+                                  crossAxisCount: isListViewMode ? 1 : 2,
+                                  mainAxisSpacing: 24,
+                                  crossAxisSpacing: 16,
+                                  childAspectRatio: isListViewMode ? 4 : 1,
+                                  children: data
+                                      .map(
+                                        (e) => CharacterCard(
+                                          isHorizontal: isListViewMode,
+                                          character: e,
+                                        ),
+                                      )
+                                      .toList(),
+                                );
+                              },
+                            );
+                          }
+                        },
+                        error: (error) {
                           return Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Flexible(
-                                child: Text(
-                                  S.of(context).charactersListIsEmpty,
-                                ),
-                              ),
+                              Flexible(child: Text(error)),
                             ],
                           );
-                        } else {
-                          return ValueListenableBuilder<bool>(
-                            valueListenable: isListView,
-                            builder: (context, isListViewMode, _) {
-                              return GridView.count(
-                                crossAxisCount: isListViewMode ? 1 : 2,
-                                mainAxisSpacing: 24,
-                                crossAxisSpacing: 16,
-                                childAspectRatio: isListViewMode ? 4 : 1,
-                                children: state.data
-                                    .map(
-                                      (e) => CharacterCard(
-                                        isHorizontal: isListViewMode,
-                                        character: e,
-                                      ),
-                                    )
-                                    .toList(),
-                              );
-                            },
-                          );
-                        }
-                      }
-
-                      return const SizedBox.shrink();
+                        },
+                      );
                     }),
                   ),
                 ),

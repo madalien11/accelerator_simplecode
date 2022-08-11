@@ -6,8 +6,8 @@ part of 'character_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CharacterModel _$CharacterModelFromJson(Map<String, dynamic> json) =>
-    CharacterModel(
+_$_CharacterModel _$$_CharacterModelFromJson(Map<String, dynamic> json) =>
+    _$_CharacterModel(
       id: json['id'] as int?,
       name: json['name'] as String?,
       status: json['status'] as String?,
@@ -29,7 +29,7 @@ CharacterModel _$CharacterModelFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['created'] as String),
     );
 
-Map<String, dynamic> _$CharacterModelToJson(CharacterModel instance) =>
+Map<String, dynamic> _$$_CharacterModelToJson(_$_CharacterModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

@@ -1,28 +1,20 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'location_model.g.dart';
+part 'location_model.freezed.dart';
 
-@JsonSerializable()
-class LocationModel {
-  LocationModel({
-    this.id,
-    this.name,
-    this.type,
-    this.dimension,
-    this.residents,
-    this.url,
-    this.created,
-  });
+@freezed
+class LocationModel with _$LocationModel {
+  const factory LocationModel({
+    int? id,
+    String? name,
+    String? type,
+    String? dimension,
+    List<String>? residents,
+    String? url,
+    DateTime? created,
+  }) = _LocationModel;
 
-  final int? id;
-  final String? name;
-  final String? type;
-  final String? dimension;
-  final List<String>? residents;
-  final String? url;
-  final DateTime? created;
-
-  factory LocationModel.fromJson(Map<String, dynamic> json) =>
+  factory LocationModel.fromJson(Map<String, Object?> json) =>
       _$LocationModelFromJson(json);
-  Map<String, dynamic> toJson() => _$LocationModelToJson(this);
 }
