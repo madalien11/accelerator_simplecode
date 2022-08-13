@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aired": MessageLookupByLibrary.simpleMessage("Aired"),
         "alive": MessageLookupByLibrary.simpleMessage("Alive"),
         "auth": MessageLookupByLibrary.simpleMessage("Authorization"),
         "characters": MessageLookupByLibrary.simpleMessage("Characters"),
@@ -50,10 +51,16 @@ class MessageLookup extends MessageLookupByLibrary {
             "Login must contain at least 3 characters"),
         "lengthErrorCheckPassword": MessageLookupByLibrary.simpleMessage(
             "Password must contain at least 8 characters"),
+        "locations": MessageLookupByLibrary.simpleMessage("Locations"),
+        "locationsSearch":
+            MessageLookupByLibrary.simpleMessage("Search locations"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "mainScreen": MessageLookupByLibrary.simpleMessage("Main screen"),
+        "noData": MessageLookupByLibrary.simpleMessage("No data"),
         "numberOfCharacters":
             MessageLookupByLibrary.simpleMessage("Total number of characters"),
+        "numberOfLocations":
+            MessageLookupByLibrary.simpleMessage("Total number of locations"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "russian": MessageLookupByLibrary.simpleMessage("Russian"),

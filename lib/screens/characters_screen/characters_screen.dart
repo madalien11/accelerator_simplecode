@@ -1,11 +1,11 @@
-import 'package:accelerator_simplecode/bloc/characters_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:accelerator_simplecode/constants/app_colors.dart';
 import 'package:accelerator_simplecode/constants/app_text_styles.dart';
 
-import '../../bloc/characters_state.dart';
+import '../../bloc/characters/characters_bloc.dart';
+import '../../bloc/characters/characters_state.dart';
 import '../../generated/l10n.dart';
 import '../../widgets/nav_bar/nav_bar.dart';
 import 'widgets/character_card/character_card.dart';
@@ -28,6 +28,7 @@ class CharactersScreen extends StatelessWidget {
             child: Column(
               children: [
                 SearchBar(
+                  title: S.of(context).charactersSearch,
                   onChanged: (val) {
                     BlocProvider.of<CharactersBloc>(context)
                         .add(CharactersFilterByNameEvent(name: val));

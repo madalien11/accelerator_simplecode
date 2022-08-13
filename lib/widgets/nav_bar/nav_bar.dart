@@ -1,4 +1,5 @@
 import 'package:accelerator_simplecode/screens/characters_screen/characters_screen.dart';
+import 'package:accelerator_simplecode/screens/locations_screen/locations_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -32,6 +33,13 @@ class NavBar extends StatelessWidget {
           label: S.of(context).characters,
         ),
         BottomNavigationBarItem(
+          icon: SvgPicture.asset(
+            AppAssets.svg.locationsIcon,
+            color: current == 1 ? AppColors.primary : AppColors.textField,
+          ),
+          label: S.of(context).locations,
+        ),
+        BottomNavigationBarItem(
           icon: const Icon(Icons.settings_outlined),
           label: S.of(context).settings,
         ),
@@ -46,6 +54,12 @@ class NavBar extends StatelessWidget {
             );
             break;
           case 1:
+            Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (context) => const LocationsScreen()),
+              (route) => false,
+            );
+            break;
+          case 2:
             Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => const SettingsScreen()),
               (route) => false,

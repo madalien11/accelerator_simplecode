@@ -29,7 +29,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         elevation: 0,
         backgroundColor: AppColors.background,
       ),
-      bottomNavigationBar: const NavBar(current: 1),
+      bottomNavigationBar: const NavBar(current: 2),
       backgroundColor: AppColors.background,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

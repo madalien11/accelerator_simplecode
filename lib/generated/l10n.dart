@@ -180,6 +180,16 @@ class S {
     );
   }
 
+  /// `No data`
+  String get noData {
+    return Intl.message(
+      'No data',
+      name: 'noData',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Close`
   String get close {
     return Intl.message(
@@ -250,11 +260,31 @@ class S {
     );
   }
 
+  /// `Search locations`
+  String get locationsSearch {
+    return Intl.message(
+      'Search locations',
+      name: 'locationsSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Total number of characters`
   String get numberOfCharacters {
     return Intl.message(
       'Total number of characters',
       name: 'numberOfCharacters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total number of locations`
+  String get numberOfLocations {
+    return Intl.message(
+      'Total number of locations',
+      name: 'numberOfLocations',
       desc: '',
       args: [],
     );
@@ -275,6 +305,16 @@ class S {
     return Intl.message(
       'Dead',
       name: 'dead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Aired`
+  String get aired {
+    return Intl.message(
+      'Aired',
+      name: 'aired',
       desc: '',
       args: [],
     );
@@ -315,6 +355,16 @@ class S {
     return Intl.message(
       'Characters',
       name: 'characters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Locations`
+  String get locations {
+    return Intl.message(
+      'Locations',
+      name: 'locations',
       desc: '',
       args: [],
     );

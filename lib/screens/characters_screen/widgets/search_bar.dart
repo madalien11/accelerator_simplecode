@@ -2,22 +2,23 @@ import 'package:flutter/material.dart';
 
 import '../../../constants/app_colors.dart';
 import '../../../constants/app_text_styles.dart';
-import '../../../generated/l10n.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({
     Key? key,
     this.onChanged,
+    required this.title,
   }) : super(key: key);
 
   final ValueChanged<String>? onChanged;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: onChanged,
       decoration: InputDecoration(
-        hintText: S.of(context).charactersSearch,
+        hintText: title,
         hintStyle: AppTextStyles.s16w400,
         filled: true,
         fillColor: AppColors.textFieldBackground,

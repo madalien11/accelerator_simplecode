@@ -1,6 +1,5 @@
-// part of 'characters_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../model/character_model.dart';
+import '../../model/character_model.dart';
 part 'characters_state.freezed.dart';
 
 @freezed
