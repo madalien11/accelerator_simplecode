@@ -1,6 +1,7 @@
 import 'package:accelerator_simplecode/constants/app_button_styles.dart';
 import 'package:accelerator_simplecode/constants/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 import '../../constants/app_assets.dart';
 import '../../constants/app_colors.dart';
@@ -101,6 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         FocusScope.of(context).unfocus();
                         if (_key.currentState != null &&
                             _key.currentState!.validate()) {
+                          Hive.box('token').put('token', 'true');
                           _loginController.clear();
                           _passwordController.clear();
                           Navigator.push(

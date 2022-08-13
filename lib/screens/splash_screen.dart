@@ -2,8 +2,10 @@ import 'dart:math';
 
 import 'package:accelerator_simplecode/constants/app_assets.dart';
 import 'package:accelerator_simplecode/repo/repo_settings.dart';
+import 'package:accelerator_simplecode/screens/characters_screen/characters_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 import '../generated/l10n.dart';
@@ -33,7 +35,9 @@ class _SplashScreenState extends State<SplashScreen> {
       S.load(defaultLocale).whenComplete(() {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => const LoginScreen(),
+            builder: (context) => Hive.box('token').get('token') != null
+                ? const CharactersScreen()
+                : const LoginScreen(),
           ),
         );
       });
