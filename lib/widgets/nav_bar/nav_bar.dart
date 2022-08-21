@@ -1,4 +1,5 @@
 import 'package:accelerator_simplecode/screens/characters_screen/characters_screen.dart';
+import 'package:accelerator_simplecode/screens/episodes_screen/episodes_screen.dart';
 import 'package:accelerator_simplecode/screens/locations_screen/locations_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -22,8 +23,8 @@ class NavBar extends StatelessWidget {
       currentIndex: current,
       selectedItemColor: AppColors.primary,
       unselectedItemColor: AppColors.textField,
-      selectedFontSize: 14.0,
-      unselectedFontSize: 14.0,
+      type: BottomNavigationBarType.fixed,
+      showUnselectedLabels: true,
       items: [
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
@@ -38,6 +39,13 @@ class NavBar extends StatelessWidget {
             color: current == 1 ? AppColors.primary : AppColors.textField,
           ),
           label: S.of(context).locations,
+        ),
+        BottomNavigationBarItem(
+          icon: SvgPicture.asset(
+            AppAssets.svg.episodesIcon,
+            color: current == 2 ? AppColors.primary : AppColors.textField,
+          ),
+          label: S.of(context).episodes,
         ),
         BottomNavigationBarItem(
           icon: const Icon(Icons.settings_outlined),
@@ -60,6 +68,12 @@ class NavBar extends StatelessWidget {
             );
             break;
           case 2:
+            Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (context) => const EpisodesScreen()),
+              (route) => false,
+            );
+            break;
+          case 3:
             Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => const SettingsScreen()),
               (route) => false,

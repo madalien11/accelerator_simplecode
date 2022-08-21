@@ -1,11 +1,11 @@
 import 'package:accelerator_simplecode/constants/app_button_styles.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants/app_text_styles.dart';
-import '../../../generated/l10n.dart';
+import '../constants/app_text_styles.dart';
+import '../generated/l10n.dart';
 
-class AuthAlertDialog extends StatelessWidget {
-  const AuthAlertDialog({
+class AppAlertDialog extends StatelessWidget {
+  const AppAlertDialog({
     Key? key,
     required this.title,
     required this.content,

@@ -31,6 +31,9 @@
 	"settings": "Настройки",
 	"characters": "Персонажи",
     "locations": "Локации",
+    "episodes": "Эпизоды",
     "charactersListIsEmpty": "Персонажей не найдено",
+    "episodesListIsEmpty": "Эпизодов не найдено",
+    "locationsListIsEmpty": "Локации не найдено",
 	"somethingWentWrong": "Что-то пошло не так :-("
 }

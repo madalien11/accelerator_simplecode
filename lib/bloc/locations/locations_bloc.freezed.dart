@@ -16,42 +16,55 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LocationsEvent {
-  String get name => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name) filterByName,
+    required TResult Function(String name) filterNextPage,
+    required TResult Function() fetch,
+    required TResult Function() nextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name)? filterByName,
+    TResult Function(String name)? filterNextPage,
+    TResult Function()? fetch,
+    TResult Function()? nextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name)? filterByName,
+    TResult Function(String name)? filterNextPage,
+    TResult Function()? fetch,
+    TResult Function()? nextPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LocationsFilterByName value) filterByName,
+    required TResult Function(LocationsFilterNextPage value) filterNextPage,
+    required TResult Function(LocationsFetch value) fetch,
+    required TResult Function(LocationsNextPage value) nextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LocationsFilterByName value)? filterByName,
+    TResult Function(LocationsFilterNextPage value)? filterNextPage,
+    TResult Function(LocationsFetch value)? fetch,
+    TResult Function(LocationsNextPage value)? nextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LocationsFilterByName value)? filterByName,
+    TResult Function(LocationsFilterNextPage value)? filterNextPage,
+    TResult Function(LocationsFetch value)? fetch,
+    TResult Function(LocationsNextPage value)? nextPage,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $LocationsEventCopyWith<LocationsEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,7 +73,6 @@ abstract class $LocationsEventCopyWith<$Res> {
   factory $LocationsEventCopyWith(
           LocationsEvent value, $Res Function(LocationsEvent) then) =
       _$LocationsEventCopyWithImpl<$Res>;
-  $Res call({String name});
 }
 
 /// @nodoc
@@ -71,27 +83,13 @@ class _$LocationsEventCopyWithImpl<$Res>
   final LocationsEvent _value;
   // ignore: unused_field
   final $Res Function(LocationsEvent) _then;
-
-  @override
-  $Res call({
-    Object? name = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class _$$LocationsFilterByNameCopyWith<$Res>
-    implements $LocationsEventCopyWith<$Res> {
+abstract class _$$LocationsFilterByNameCopyWith<$Res> {
   factory _$$LocationsFilterByNameCopyWith(_$LocationsFilterByName value,
           $Res Function(_$LocationsFilterByName) then) =
       __$$LocationsFilterByNameCopyWithImpl<$Res>;
-  @override
   $Res call({String name});
 }
 
@@ -154,6 +152,9 @@ class _$LocationsFilterByName implements LocationsFilterByName {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name) filterByName,
+    required TResult Function(String name) filterNextPage,
+    required TResult Function() fetch,
+    required TResult Function() nextPage,
   }) {
     return filterByName(name);
   }
@@ -162,6 +163,9 @@ class _$LocationsFilterByName implements LocationsFilterByName {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name)? filterByName,
+    TResult Function(String name)? filterNextPage,
+    TResult Function()? fetch,
+    TResult Function()? nextPage,
   }) {
     return filterByName?.call(name);
   }
@@ -170,6 +174,9 @@ class _$LocationsFilterByName implements LocationsFilterByName {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name)? filterByName,
+    TResult Function(String name)? filterNextPage,
+    TResult Function()? fetch,
+    TResult Function()? nextPage,
     required TResult orElse(),
   }) {
     if (filterByName != null) {
@@ -182,6 +189,9 @@ class _$LocationsFilterByName implements LocationsFilterByName {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LocationsFilterByName value) filterByName,
+    required TResult Function(LocationsFilterNextPage value) filterNextPage,
+    required TResult Function(LocationsFetch value) fetch,
+    required TResult Function(LocationsNextPage value) nextPage,
   }) {
     return filterByName(this);
   }
@@ -190,6 +200,9 @@ class _$LocationsFilterByName implements LocationsFilterByName {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LocationsFilterByName value)? filterByName,
+    TResult Function(LocationsFilterNextPage value)? filterNextPage,
+    TResult Function(LocationsFetch value)? fetch,
+    TResult Function(LocationsNextPage value)? nextPage,
   }) {
     return filterByName?.call(this);
   }
@@ -198,6 +211,9 @@ class _$LocationsFilterByName implements LocationsFilterByName {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LocationsFilterByName value)? filterByName,
+    TResult Function(LocationsFilterNextPage value)? filterNextPage,
+    TResult Function(LocationsFetch value)? fetch,
+    TResult Function(LocationsNextPage value)? nextPage,
     required TResult orElse(),
   }) {
     if (filterByName != null) {
@@ -211,12 +227,393 @@ abstract class LocationsFilterByName implements LocationsEvent {
   const factory LocationsFilterByName({required final String name}) =
       _$LocationsFilterByName;
 
-  @override
   String get name;
-  @override
   @JsonKey(ignore: true)
   _$$LocationsFilterByNameCopyWith<_$LocationsFilterByName> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LocationsFilterNextPageCopyWith<$Res> {
+  factory _$$LocationsFilterNextPageCopyWith(_$LocationsFilterNextPage value,
+          $Res Function(_$LocationsFilterNextPage) then) =
+      __$$LocationsFilterNextPageCopyWithImpl<$Res>;
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$$LocationsFilterNextPageCopyWithImpl<$Res>
+    extends _$LocationsEventCopyWithImpl<$Res>
+    implements _$$LocationsFilterNextPageCopyWith<$Res> {
+  __$$LocationsFilterNextPageCopyWithImpl(_$LocationsFilterNextPage _value,
+      $Res Function(_$LocationsFilterNextPage) _then)
+      : super(_value, (v) => _then(v as _$LocationsFilterNextPage));
+
+  @override
+  _$LocationsFilterNextPage get _value =>
+      super._value as _$LocationsFilterNextPage;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+  }) {
+    return _then(_$LocationsFilterNextPage(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LocationsFilterNextPage implements LocationsFilterNextPage {
+  const _$LocationsFilterNextPage({required this.name});
+
+  @override
+  final String name;
+
+  @override
+  String toString() {
+    return 'LocationsEvent.filterNextPage(name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LocationsFilterNextPage &&
+            const DeepCollectionEquality().equals(other.name, name));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$LocationsFilterNextPageCopyWith<_$LocationsFilterNextPage> get copyWith =>
+      __$$LocationsFilterNextPageCopyWithImpl<_$LocationsFilterNextPage>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) filterByName,
+    required TResult Function(String name) filterNextPage,
+    required TResult Function() fetch,
+    required TResult Function() nextPage,
+  }) {
+    return filterNextPage(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name)? filterByName,
+    TResult Function(String name)? filterNextPage,
+    TResult Function()? fetch,
+    TResult Function()? nextPage,
+  }) {
+    return filterNextPage?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? filterByName,
+    TResult Function(String name)? filterNextPage,
+    TResult Function()? fetch,
+    TResult Function()? nextPage,
+    required TResult orElse(),
+  }) {
+    if (filterNextPage != null) {
+      return filterNextPage(name);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LocationsFilterByName value) filterByName,
+    required TResult Function(LocationsFilterNextPage value) filterNextPage,
+    required TResult Function(LocationsFetch value) fetch,
+    required TResult Function(LocationsNextPage value) nextPage,
+  }) {
+    return filterNextPage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LocationsFilterByName value)? filterByName,
+    TResult Function(LocationsFilterNextPage value)? filterNextPage,
+    TResult Function(LocationsFetch value)? fetch,
+    TResult Function(LocationsNextPage value)? nextPage,
+  }) {
+    return filterNextPage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LocationsFilterByName value)? filterByName,
+    TResult Function(LocationsFilterNextPage value)? filterNextPage,
+    TResult Function(LocationsFetch value)? fetch,
+    TResult Function(LocationsNextPage value)? nextPage,
+    required TResult orElse(),
+  }) {
+    if (filterNextPage != null) {
+      return filterNextPage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LocationsFilterNextPage implements LocationsEvent {
+  const factory LocationsFilterNextPage({required final String name}) =
+      _$LocationsFilterNextPage;
+
+  String get name;
+  @JsonKey(ignore: true)
+  _$$LocationsFilterNextPageCopyWith<_$LocationsFilterNextPage> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LocationsFetchCopyWith<$Res> {
+  factory _$$LocationsFetchCopyWith(
+          _$LocationsFetch value, $Res Function(_$LocationsFetch) then) =
+      __$$LocationsFetchCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LocationsFetchCopyWithImpl<$Res>
+    extends _$LocationsEventCopyWithImpl<$Res>
+    implements _$$LocationsFetchCopyWith<$Res> {
+  __$$LocationsFetchCopyWithImpl(
+      _$LocationsFetch _value, $Res Function(_$LocationsFetch) _then)
+      : super(_value, (v) => _then(v as _$LocationsFetch));
+
+  @override
+  _$LocationsFetch get _value => super._value as _$LocationsFetch;
+}
+
+/// @nodoc
+
+class _$LocationsFetch implements LocationsFetch {
+  const _$LocationsFetch();
+
+  @override
+  String toString() {
+    return 'LocationsEvent.fetch()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LocationsFetch);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) filterByName,
+    required TResult Function(String name) filterNextPage,
+    required TResult Function() fetch,
+    required TResult Function() nextPage,
+  }) {
+    return fetch();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name)? filterByName,
+    TResult Function(String name)? filterNextPage,
+    TResult Function()? fetch,
+    TResult Function()? nextPage,
+  }) {
+    return fetch?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? filterByName,
+    TResult Function(String name)? filterNextPage,
+    TResult Function()? fetch,
+    TResult Function()? nextPage,
+    required TResult orElse(),
+  }) {
+    if (fetch != null) {
+      return fetch();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LocationsFilterByName value) filterByName,
+    required TResult Function(LocationsFilterNextPage value) filterNextPage,
+    required TResult Function(LocationsFetch value) fetch,
+    required TResult Function(LocationsNextPage value) nextPage,
+  }) {
+    return fetch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LocationsFilterByName value)? filterByName,
+    TResult Function(LocationsFilterNextPage value)? filterNextPage,
+    TResult Function(LocationsFetch value)? fetch,
+    TResult Function(LocationsNextPage value)? nextPage,
+  }) {
+    return fetch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LocationsFilterByName value)? filterByName,
+    TResult Function(LocationsFilterNextPage value)? filterNextPage,
+    TResult Function(LocationsFetch value)? fetch,
+    TResult Function(LocationsNextPage value)? nextPage,
+    required TResult orElse(),
+  }) {
+    if (fetch != null) {
+      return fetch(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LocationsFetch implements LocationsEvent {
+  const factory LocationsFetch() = _$LocationsFetch;
+}
+
+/// @nodoc
+abstract class _$$LocationsNextPageCopyWith<$Res> {
+  factory _$$LocationsNextPageCopyWith(
+          _$LocationsNextPage value, $Res Function(_$LocationsNextPage) then) =
+      __$$LocationsNextPageCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LocationsNextPageCopyWithImpl<$Res>
+    extends _$LocationsEventCopyWithImpl<$Res>
+    implements _$$LocationsNextPageCopyWith<$Res> {
+  __$$LocationsNextPageCopyWithImpl(
+      _$LocationsNextPage _value, $Res Function(_$LocationsNextPage) _then)
+      : super(_value, (v) => _then(v as _$LocationsNextPage));
+
+  @override
+  _$LocationsNextPage get _value => super._value as _$LocationsNextPage;
+}
+
+/// @nodoc
+
+class _$LocationsNextPage implements LocationsNextPage {
+  const _$LocationsNextPage();
+
+  @override
+  String toString() {
+    return 'LocationsEvent.nextPage()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LocationsNextPage);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) filterByName,
+    required TResult Function(String name) filterNextPage,
+    required TResult Function() fetch,
+    required TResult Function() nextPage,
+  }) {
+    return nextPage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name)? filterByName,
+    TResult Function(String name)? filterNextPage,
+    TResult Function()? fetch,
+    TResult Function()? nextPage,
+  }) {
+    return nextPage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? filterByName,
+    TResult Function(String name)? filterNextPage,
+    TResult Function()? fetch,
+    TResult Function()? nextPage,
+    required TResult orElse(),
+  }) {
+    if (nextPage != null) {
+      return nextPage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LocationsFilterByName value) filterByName,
+    required TResult Function(LocationsFilterNextPage value) filterNextPage,
+    required TResult Function(LocationsFetch value) fetch,
+    required TResult Function(LocationsNextPage value) nextPage,
+  }) {
+    return nextPage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LocationsFilterByName value)? filterByName,
+    TResult Function(LocationsFilterNextPage value)? filterNextPage,
+    TResult Function(LocationsFetch value)? fetch,
+    TResult Function(LocationsNextPage value)? nextPage,
+  }) {
+    return nextPage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LocationsFilterByName value)? filterByName,
+    TResult Function(LocationsFilterNextPage value)? filterNextPage,
+    TResult Function(LocationsFetch value)? fetch,
+    TResult Function(LocationsNextPage value)? nextPage,
+    required TResult orElse(),
+  }) {
+    if (nextPage != null) {
+      return nextPage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LocationsNextPage implements LocationsEvent {
+  const factory LocationsNextPage() = _$LocationsNextPage;
 }
 
 /// @nodoc
@@ -225,7 +622,9 @@ mixin _$LocationsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<LocationModel> data) data,
+    required TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)
+        data,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -233,7 +632,9 @@ mixin _$LocationsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<LocationModel> data)? data,
+    TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -241,7 +642,9 @@ mixin _$LocationsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<LocationModel> data)? data,
+    TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -333,7 +736,9 @@ class _$LocationsInitial implements LocationsInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<LocationModel> data) data,
+    required TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)
+        data,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -344,7 +749,9 @@ class _$LocationsInitial implements LocationsInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<LocationModel> data)? data,
+    TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function(String error)? error,
   }) {
     return initial?.call();
@@ -355,7 +762,9 @@ class _$LocationsInitial implements LocationsInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<LocationModel> data)? data,
+    TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -450,7 +859,9 @@ class _$LocationsLoading implements LocationsLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<LocationModel> data) data,
+    required TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)
+        data,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -461,7 +872,9 @@ class _$LocationsLoading implements LocationsLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<LocationModel> data)? data,
+    TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function(String error)? error,
   }) {
     return loading?.call();
@@ -472,7 +885,9 @@ class _$LocationsLoading implements LocationsLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<LocationModel> data)? data,
+    TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -529,7 +944,7 @@ abstract class _$$LocationsDataCopyWith<$Res> {
   factory _$$LocationsDataCopyWith(
           _$LocationsData value, $Res Function(_$LocationsData) then) =
       __$$LocationsDataCopyWithImpl<$Res>;
-  $Res call({List<LocationModel> data});
+  $Res call({List<LocationModel> data, bool isLoading, String? errorMessage});
 }
 
 /// @nodoc
@@ -546,12 +961,22 @@ class __$$LocationsDataCopyWithImpl<$Res>
   @override
   $Res call({
     Object? data = freezed,
+    Object? isLoading = freezed,
+    Object? errorMessage = freezed,
   }) {
     return _then(_$LocationsData(
       data: data == freezed
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<LocationModel>,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorMessage: errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -559,7 +984,10 @@ class __$$LocationsDataCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LocationsData implements LocationsData {
-  const _$LocationsData({required final List<LocationModel> data})
+  const _$LocationsData(
+      {required final List<LocationModel> data,
+      this.isLoading = false,
+      this.errorMessage})
       : _data = data;
 
   final List<LocationModel> _data;
@@ -570,8 +998,14 @@ class _$LocationsData implements LocationsData {
   }
 
   @override
+  @JsonKey()
+  final bool isLoading;
+  @override
+  final String? errorMessage;
+
+  @override
   String toString() {
-    return 'LocationsState.data(data: $data)';
+    return 'LocationsState.data(data: $data, isLoading: $isLoading, errorMessage: $errorMessage)';
   }
 
   @override
@@ -579,12 +1013,18 @@ class _$LocationsData implements LocationsData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LocationsData &&
-            const DeepCollectionEquality().equals(other._data, _data));
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality()
+                .equals(other.errorMessage, errorMessage));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_data),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(errorMessage));
 
   @JsonKey(ignore: true)
   @override
@@ -596,10 +1036,12 @@ class _$LocationsData implements LocationsData {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<LocationModel> data) data,
+    required TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)
+        data,
     required TResult Function(String error) error,
   }) {
-    return data(this.data);
+    return data(this.data, isLoading, errorMessage);
   }
 
   @override
@@ -607,10 +1049,12 @@ class _$LocationsData implements LocationsData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<LocationModel> data)? data,
+    TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function(String error)? error,
   }) {
-    return data?.call(this.data);
+    return data?.call(this.data, isLoading, errorMessage);
   }
 
   @override
@@ -618,12 +1062,14 @@ class _$LocationsData implements LocationsData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<LocationModel> data)? data,
+    TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(this.data);
+      return data(this.data, isLoading, errorMessage);
     }
     return orElse();
   }
@@ -667,10 +1113,14 @@ class _$LocationsData implements LocationsData {
 }
 
 abstract class LocationsData implements LocationsState {
-  const factory LocationsData({required final List<LocationModel> data}) =
-      _$LocationsData;
+  const factory LocationsData(
+      {required final List<LocationModel> data,
+      final bool isLoading,
+      final String? errorMessage}) = _$LocationsData;
 
   List<LocationModel> get data;
+  bool get isLoading;
+  String? get errorMessage;
   @JsonKey(ignore: true)
   _$$LocationsDataCopyWith<_$LocationsData> get copyWith =>
       throw _privateConstructorUsedError;
@@ -743,7 +1193,9 @@ class _$LocationsError implements LocationsError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<LocationModel> data) data,
+    required TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)
+        data,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -754,7 +1206,9 @@ class _$LocationsError implements LocationsError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<LocationModel> data)? data,
+    TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -765,7 +1219,9 @@ class _$LocationsError implements LocationsError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<LocationModel> data)? data,
+    TResult Function(
+            List<LocationModel> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {

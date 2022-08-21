@@ -20,4 +20,5 @@ class _Svg {
   final String passwordIcon = 'assets/images/svg/password_icon.svg';
   final String charactersIcon = 'assets/images/svg/characters_icon.svg';
   final String locationsIcon = 'assets/images/svg/locations_icon.svg';
+  final String episodesIcon = 'assets/images/svg/episodes_icon.svg';
 }

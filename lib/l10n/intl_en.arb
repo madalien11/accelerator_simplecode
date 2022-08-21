@@ -31,6 +31,9 @@
 	"settings": "Settings",
 	"characters": "Characters",
 	"locations": "Locations",
+	"episodes": "Episodes",
     "charactersListIsEmpty": "Characters were not found",
+    "episodesListIsEmpty": "Episodes were not found",
+    "locationsListIsEmpty": "Locations were not found",
 	"somethingWentWrong": "Something went wrong :-("
 }

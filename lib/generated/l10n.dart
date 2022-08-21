@@ -370,11 +370,41 @@ class S {
     );
   }
 
+  /// `Episodes`
+  String get episodes {
+    return Intl.message(
+      'Episodes',
+      name: 'episodes',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Characters were not found`
   String get charactersListIsEmpty {
     return Intl.message(
       'Characters were not found',
       name: 'charactersListIsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Episodes were not found`
+  String get episodesListIsEmpty {
+    return Intl.message(
+      'Episodes were not found',
+      name: 'episodesListIsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Locations were not found`
+  String get locationsListIsEmpty {
+    return Intl.message(
+      'Locations were not found',
+      name: 'locationsListIsEmpty',
       desc: '',
       args: [],
     );

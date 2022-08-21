@@ -37,6 +37,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account yet"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
+        "episodes": MessageLookupByLibrary.simpleMessage("Episodes"),
+        "episodesListIsEmpty":
+            MessageLookupByLibrary.simpleMessage("Episodes were not found"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "inputErrorCheckLogin":
             MessageLookupByLibrary.simpleMessage("Wrong login"),
@@ -52,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "lengthErrorCheckPassword": MessageLookupByLibrary.simpleMessage(
             "Password must contain at least 8 characters"),
         "locations": MessageLookupByLibrary.simpleMessage("Locations"),
+        "locationsListIsEmpty":
+            MessageLookupByLibrary.simpleMessage("Locations were not found"),
         "locationsSearch":
             MessageLookupByLibrary.simpleMessage("Search locations"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),

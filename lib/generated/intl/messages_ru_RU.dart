@@ -38,6 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("У вас еще нет аккаунта"),
         "english": MessageLookupByLibrary.simpleMessage("Английский"),
+        "episodes": MessageLookupByLibrary.simpleMessage("Эпизоды"),
+        "episodesListIsEmpty":
+            MessageLookupByLibrary.simpleMessage("Эпизодов не найдено"),
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "inputErrorCheckLogin":
             MessageLookupByLibrary.simpleMessage("Неправильный логин"),
@@ -53,6 +56,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "lengthErrorCheckPassword": MessageLookupByLibrary.simpleMessage(
             "Пароль должен содержать не менее 8 символов"),
         "locations": MessageLookupByLibrary.simpleMessage("Локации"),
+        "locationsListIsEmpty":
+            MessageLookupByLibrary.simpleMessage("Локации не найдено"),
         "locationsSearch":
             MessageLookupByLibrary.simpleMessage("Найти локацию"),
         "login": MessageLookupByLibrary.simpleMessage("Логин"),

@@ -1,6 +1,8 @@
+import 'package:accelerator_simplecode/bloc/episodes/episodes_bloc.dart';
 import 'package:accelerator_simplecode/bloc/locations/locations_bloc.dart';
 import 'package:accelerator_simplecode/repo/api.dart';
 import 'package:accelerator_simplecode/repo/repo_characters.dart';
+import 'package:accelerator_simplecode/repo/repo_episodes.dart';
 import 'package:accelerator_simplecode/repo/repo_locations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,6 +38,11 @@ class InitWidget extends StatelessWidget {
             api: RepositoryProvider.of<Api>(context),
           ),
         ),
+        RepositoryProvider(
+          create: (context) => RepoEpisodes(
+            api: RepositoryProvider.of<Api>(context),
+          ),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -51,6 +58,13 @@ class InitWidget extends StatelessWidget {
                   repo: RepositoryProvider.of<RepoLocations>(context),
                 )..add(
                     const LocationsFilterByName(name: ''),
+                  )),
+          ),
+          BlocProvider(
+            create: ((context) => EpisodesBloc(
+                  repo: RepositoryProvider.of<RepoEpisodes>(context),
+                )..add(
+                    const EpisodesFetch(),
                   )),
           ),
         ],

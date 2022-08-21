@@ -7,7 +7,7 @@ import '../../constants/app_assets.dart';
 import '../../constants/app_colors.dart';
 import '../../generated/l10n.dart';
 import '../characters_screen/characters_screen.dart';
-import 'widgets/auth_alert_dialog.dart';
+import '../../widgets/app_alert_dialog.dart';
 import 'widgets/auth_text_field.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           showDialog(
                             context: context,
                             builder: (BuildContext context) {
-                              return AuthAlertDialog(
+                              return AppAlertDialog(
                                 title: S.of(context).error,
                                 content:
                                     S.of(context).inputErrorCheckLoginPassword,
